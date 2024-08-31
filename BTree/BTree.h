@@ -1,8 +1,10 @@
 #pragma once
 #include<vector>
 #include<utility>
+#include<iostream>
 using std::vector;
 using std::pair;
+using std::cout;
 
 
 
@@ -55,6 +57,26 @@ public:
 		}
 		return std::make_pair(parent, -1);
 	}
+
+
+	void _InOrder(Node* root)
+	{
+		if (root == nullptr)
+			return;
+
+		for (size_t i = 0; i < root->_n; ++i)
+		{
+			_InOrder(root->_subs[i]);
+			cout << root->_keys[i]<<" ";
+		}
+		_InOrder(root->_subs[root->_n]);
+	}
+	void InOrder()
+	{
+		_InOrder(_root);
+	}
+
+
 
 	bool Insert(const K& key)
 	{

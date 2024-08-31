@@ -9,7 +9,7 @@ int main()
 	vector<int> arr;
 	srand(time(nullptr));
 	size_t n = -1;
-	for (size_t i = 0; i <99999999; ++i)
+	for (size_t i = 0; i <10; ++i)
 	{
 		arr.push_back(rand());
 	}
@@ -25,6 +25,9 @@ int main()
 			return 0;
 		}
 	}
-	cout << "Yes";
+	cout << "Yes\n";
+
+	bt.InOrder();
+
 	return 0;
 }
